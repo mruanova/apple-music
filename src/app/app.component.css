@@ -106,3 +106,33 @@ svg#clouds {
     z-index: -10;
     width: 1920px;
 }
+
+.btn-attention {
+    background-color: rgb(221, 0, 49); /* Primary red */
+    color: white; /* White text */
+    padding: 12px 24px; /* Comfortable padding */
+    margin-right: 20px;
+    font-size: 16px; /* Standard button font size */
+    font-weight: 500; /* Semi-bold text */
+    border: none; /* No border */
+    border-radius: 6px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+.btn-attention:hover {
+    background-color: #CC0000; /* Darker red on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow on hover */
+}
+
+.btn-attention:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 4px rgba(255, 75, 75, 0.3); /* Red focus ring */
+}
+
+.btn-attention:active {
+    background-color: #990000; /* Even darker red when active */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Smaller shadow when active */
+}
