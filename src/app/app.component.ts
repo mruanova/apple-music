@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MUSICKIT_APP_BUILD, MUSICKIT_APP_NAME } from './constants';
 declare var MusicKit: any;
 @Component({
@@ -6,9 +6,10 @@ declare var MusicKit: any;
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'Apple Music';
-  token = 'APPLE-DEVELOPER-TOKEN';
+export class AppComponent implements OnInit {
+  title: string = '';
+  token: string = '';
+  message: string = '';
   constructor() {
     MusicKit.configure({
       developerToken: this.token,
@@ -18,12 +19,23 @@ export class AppComponent {
       }
     });
   }
+  ngOnInit() {
+    this.title = 'Apple Music';
+    this.token = 'APPLE-DEVELOPER-TOKEN';
+  }
   onClick(event: MouseEvent) {
+    console.log(event);
     const music = MusicKit.getInstance();
     if (music) {
-      music.authorize().then(function () {
-        console.log("Authorized", event);
+      music.authorize().then((response: any) => {
+        console.log(response);
+        this.message = "Authorized";
+      }).catch((err: { message: string; }) => {
+        console.error(err);
+        this.message = err.message;
       });
+    } else {
+      this.message = "Invalid token";
     }
   };
 }
