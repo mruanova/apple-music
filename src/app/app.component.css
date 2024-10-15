@@ -136,3 +136,8 @@ svg#clouds {
     background-color: #990000; /* Even darker red when active */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Smaller shadow when active */
 }
+
+input {
+    margin-top: 30px;
+    width: 250px;
+}
