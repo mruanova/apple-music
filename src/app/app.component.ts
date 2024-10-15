@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DEVELOPER_TOKEN, MUSICKIT_APP_BUILD, MUSICKIT_APP_NAME } from './constants';
 declare var MusicKit: any;
 @Component({
   selector: 'app-root',
@@ -9,17 +10,19 @@ export class AppComponent {
   title = 'Apple Music';
   constructor() {
     MusicKit.configure({
-      developerToken: 'token', // TODO: put my own token in the real code
+      developerToken: DEVELOPER_TOKEN,
       app: {
-        name: 'Hear',
-        build: '1978.4.1'
+        name: MUSICKIT_APP_NAME,
+        build: MUSICKIT_APP_BUILD,
       }
     });
   }
   onClick(event: MouseEvent) {
     const music = MusicKit.getInstance();
-    music.authorize().then(function () {
-      console.log("Authorized");
-    });
+    if (music) {
+      music.authorize().then(function () {
+        console.log("Authorized", event);
+      });
+    }
   };
 }

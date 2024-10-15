@@ -26,6 +26,8 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
+## Apple Developer
+### Using Automatic Developer Token Generation for Apple Music API
 https://developer.apple.com/documentation/musickit/using-automatic-token-generation-for-apple-music-api
 
 Access Unavailable
@@ -33,3 +35,9 @@ Access Unavailable
 This resource is only for developers enrolled in a developer program or members of an organization’s team in a developer program.
 
 Error: Invalid token.
+
+### Generating Developer Tokens
+https://developer.apple.com/documentation/applemusicapi/generating_developer_tokens
+
+### MusicKit on the Web
+https://js-cdn.music.apple.com/musickit/v3/docs/index.html?path=/story/get-started--page
